@@ -14,5 +14,6 @@ WORKDIR /var/www/html/mysite1
 # 将当前目录文件加入到容器工作目录中（. 表示当前宿主机目录）
 ADD . /var/www/html/mysite1
 
-# 利用 pip 安装依赖
-RUN pip install -r requirements.txt
+# 利用 pip 安装依赖 使用清华源加速镜像
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ -r requirements.txt
+
